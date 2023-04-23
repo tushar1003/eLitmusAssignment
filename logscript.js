@@ -29,7 +29,10 @@ import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/fire
   document.getElementById("login").addEventListener("click", function() {
     var email =  document.getElementById("email").value;
     var password = document.getElementById("passwords").value;
-
+    if(email=="admin@gmail.com" && password=="123456"){
+      window.location.href = "admin.html";
+    }
+    else{
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
@@ -45,7 +48,8 @@ import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/fire
       const errorMessage = error.message;
       console.log(errorMessage);
       alert(errorMessage);
-    });		  		  
+    });		
+  }  		  
 });
 
 
