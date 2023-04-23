@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puzzle Game</title>
+  <style>
+    	h1 {
+		font-size: 2.5em;
+		text-align: center;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	
+	p {
+		font-size: 1.2em;
+		text-align: center;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	
+	label {
+		font-size: 1.2em;
+		margin-bottom: 20px;
+	}
+	
+	input[type="text"] {
+		padding: 10px;
+		border-radius: 5px;
+		border: none;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+		font-size: 1.2em;
+		width: 300px;
+		max-width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	input[type="submit"] {
+		padding: 10px 20px;
+		border-radius: 5px;
+		border: none;
+		background-color: #428bca;
+		color: #fff;
+		font-size: 1.2em;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	
+	input[type="submit"]:hover {
+		background-color: #3071a9;
+	}
+	
+	img {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		height: auto;
+	}
+</style>
+
+  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Welcome to the Puzzle Game!</h1>
+	
+	<p>Examine the image below closely. It contains a hidden message that will unlock the next clue:</p>
+	
+	<img id="hidden-image" src="elitmus logo.png" alt="Hidden Image">
+	
+	<form>
+		<label for="answer">Enter the decoded message from the hidden image:</label>
+		<input type="text" id="answer" name="answer">
+		<input type="submit" value="Submit">
+	</form>
+	
+	<script>
+		// Use JavaScript to check if the user's answer is correct
+		const form = document.querySelector('form');
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const answer = document.querySelector('#answer').value;
+			if (answer === 'Elitmus') {
+				// Unlock the next step of the puzzle
+				window.location.href="congratulations.html"
+			} else {
+				alert('Sorry, that answer is incorrect. Please try again.');
+			}
+		});
+	</script>
+	
+</body>
+</html>
+

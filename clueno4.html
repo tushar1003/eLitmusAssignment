@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clue 4</title>
+    <style>
+      /* Style for the color squares */
+      /* Style for the body */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+      }
+
+/* Style for the header */
+h1 {
+  color: #555;
+  text-align: center;
+}
+
+/* Style for the paragraph */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Style for the color squares */
+.circle {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 10px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Added to vertically center on the page */
+}
+
+/* Colors for the squares */
+#red {
+  background-color: #f91205;
+}
+#orange {
+  background-color: #FF851B;
+}
+#yellow {
+  background-color: #FFDC00;
+}
+#green {
+  background-color: #2ECC40;
+}
+#blue {
+  background-color: #0589fd;
+}
+#indigo {
+  background-color: indigo;
+}
+#white {
+  background-color: white;
+}
+
+/* Style for the color squares on hover */
+.circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the password paragraph */
+.password-paragraph {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  margin: 20px;
+}
+/* Style for the next page link */
+.nextPageText{
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto;
+  background-color: #0074D9;
+  color: #fff;
+  font-size: 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none; /* remove underline */
+}
+
+.next-page-link:hover {
+  background-color: #003D6F;
+  text-decoration: none; /* remove underline on hover */
+}
+
+
+/* Style for the next page link on hover */
+.next-page-link:hover {
+  background-color: #003D6F;
+}
+</style>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <h1>Clue 4</h1>
+    <p>Please select the circles below in a specific sequence that would result in the appearance of a rainbow.</p>
+    <div>
+      <!-- Color squares with unique IDs -->
+      <div class="circle" id="red"></div>
+      <div class="circle" id="orange"></div>
+      <div class="circle" id="yellow"></div>
+      <div class="circle" id="green"></div>
+      <div class="circle" id="blue"></div>
+      <div class="circle" id="indigo"></div>
+      <div class="circle" id="white"></div>
+    </div>
+    <script>
+      // Initialize variables
+      let clickedCircles = [];
+
+      // Get all the squares by their IDs
+      const red = document.getElementById("red");
+      const orange = document.getElementById("orange");
+      const yellow = document.getElementById("yellow");
+      const green = document.getElementById("green");
+      const blue = document.getElementById("blue");
+      const indigo = document.getElementById("indigo");
+      const white = document.getElementById("white");
+
+      // Add click event listeners to each square
+      red.addEventListener("click", handleClick);
+      orange.addEventListener("click", handleClick);
+      yellow.addEventListener("click", handleClick);
+      green.addEventListener("click", handleClick);
+      blue.addEventListener("click", handleClick);
+      indigo.addEventListener("click", handleClick);
+      white.addEventListener("click", handleClick);
+
+      // Function to handle a square click event
+      function handleClick(e) {
+        const circleId = e.target.id;
+        highlightCircle(circleId);
+        clickedCircles.push(circleId);
+        checkCircles();
+      }
+      function highlightCircle(circleId) {
+        const circle = document.getElementById(circleId);
+        circle.classList.add("highlight");
+      }
+      function unhighlightCircles() {
+        const circles = document.querySelectorAll(".circle");
+        circles.forEach(circle => circle.classList.remove("highlight"));
+      }
+      function checkCircles() {
+        const correctOrder = ["white", "indigo", "blue", "green", "yellow", "orange", "red"];
+        const clickedOrder = clickedCircles.slice(-7);
+        if (clickedOrder.join("") === correctOrder.join("")) {
+          revealPassword();
+        } else if (clickedCircles.length === 7) {
+          alert("Sorry, you have entered the wrong sequence. Please try again.");
+          clickedCircles = [];
+          unhighlightCircles();
+        }
+      }
+      // // Function to check if the squares are clicked in the correct order
+      // function checkCircles() {
+      //   const correctOrder = ["white", "indigo", "blue", "green", "yellow", "orange", "red"];
+      //   const clickedOrder = clickedCircles.slice(-7);
+      //   if (clickedOrder.join("") === correctOrder.join("")) {
+      //     revealPassword();
+      //   }
+      // }
+
+      // Function to reveal the password
+      function revealPassword() {
+        const passwordParagraph = document.createElement("p");
+        const passwordText = document.createTextNode("The password to access the next clue is: Soft Skills");
+        passwordParagraph.appendChild(passwordText);
+        document.body.appendChild(passwordParagraph);
+
+        const nextPageLink = document.createElement("a");
+        const nextPageText = document.createTextNode("NextPage");
+        nextPageLink.appendChild(nextPageText);
+        nextPageLink.title = "NextPage";
+        nextPageLink.href = "clueno5.html";
+        document.body.appendChild(nextPageLink);
+      }
+    </script>
+  </body>
+</html>
+
+

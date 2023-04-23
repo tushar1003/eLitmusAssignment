@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+    <title>Clue 1</title>
+    <Style>
+      body {
+          margin-top: 180px;
+        }
+
+              h1 {
+          text-align: center;
+          font-size: 2em;
+        }
+
+     form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        width: 400px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        text-align: center;
+      }
+      
+      button[type="button"] {
+        padding: 10px 20px;
+        border-radius: 3px;
+        border: none;
+        background-color: #0077FF;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      
+      /* Style for the riddle */
+      p {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+  </Style>
+  </head>
+  <body>
+    <h1>Clue 1</h1>
+    <p>Here's the riddle:</p>
+    <p>What has a head and a tail but no body?</p>
+    <form>
+      <label for="nextClueInput">Enter the answer for the above clue:</label>
+      <input type="text" id="nextClueInput" name="nextClueInput">
+      <button type="button" id="submitNextClue">Submit</button>
+      <div id="timer"></div>
+    </form>
+    </body>
+    <script>
+      const timerEl = document.getElementById("timer");
+      const timeLimit = 60; // Time limit for the clue in seconds
+      let timeRemaining = timeLimit;
+      let timerId;
+      let timeTakenForCurrentClue = 0;
+      const startTime = Date.now();
+       localStorage.setItem("clue1StartTime", startTime);
+
+      function startTimer() {
+        timerId = setInterval(() => {
+          timeRemaining--;
+          timeTakenForCurrentClue++;
+          timerEl.innerHTML = `Time remaining: ${timeRemaining} seconds`;
+          if (timeRemaining === 0) {
+            clearInterval(timerId);
+            alert("Time's up! Please restart.");
+            window.location.href = "index.html"; // Redirect to start page
+          }
+        }, 1000);
+      }
+
+      startTimer(); 
+      const submitNextClue = document.getElementById("submitNextClue");
+    
+      submitNextClue.addEventListener("click", function() {
+        const nextClueUrl = document.getElementById("nextClueInput").value;
+        // Redirect to the next clue page based on the URL entered by the user
+        if (nextClueUrl.includes("coin")) {
+          clearInterval(timerId); // Stop the timer when the user finds the password
+          timeTakenForCurrentClue += timeRemaining;
+          alert("Congratulations! You have found the password.");
+          // add time taken for current clue to total time
+          let prevTime = localStorage.getItem("totalTime");
+          let totalTime = 0;
+          if (prevTime) {
+            totalTime = parseInt(prevTime);
+          }
+          totalTime += timeTakenForCurrentClue;
+          // save updated total time in localStorage
+          localStorage.setItem("totalTime", totalTime);
+          window.location.href = "clueno2.html"; // Redirect to the next clue page
+        } else {
+          clearInterval(timerId); // Stop the timer when the user reaches a dead end
+          timeTakenForCurrentClue += (timeLimit - timeRemaining);
+          alert("Sorry, that's not the correct password. you reached Deadend.");
+          // add time taken for current clue to total time
+          let prevTime = localStorage.getItem("totalTime");
+          let totalTime = 0;
+          if (prevTime) {
+            totalTime = parseInt(prevTime);
+          }
+          totalTime += timeTakenForCurrentClue;
+          // save updated total time in localStorage
+          localStorage.setItem("totalTime", totalTime);
+          window.location.href = "deadendno1.html"; // Redirect to the dead end page
+        }
+      });
+    </script>
+    
+  
+</html>

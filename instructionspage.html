@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+	<title>Welcome to the Puzzle</title>
+	<link rel="stylesheet" href="instructionpage.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to the Puzzle</h1>
+		<p id="instruction">Instructions: 
+            <ul>
+        <li>You will start at the beginning and receive clues along the way.</li>
+        <li>Each clue will lead you to the next one, but beware of the dead-ends!</li>
+        <li>Your progress will be recorded, so take your time and do your best.</li>
+      </ul>
+        </p>
+		<button id="startButton">Start Puzzle</button>
+	</div>
+</body>
+<script>
+    const startButton = document.getElementById("startButton");
+    startButton.addEventListener("click", function() {
+      window.location.href = "clueno1.html";
+    });
+  </script>
+</html>

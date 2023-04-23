@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+	<title>Login Page</title>
+	<style>
+        body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #F7D9D9;
+}
+
+.login-box {
+	width: 400px;
+	height: 550px;
+	background-color: #FFFFFF;
+	color: #000000;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+
+h1 {
+	margin-top: 40px;
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 35px;
+}
+
+label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+input[type="email"], input[type="password"] {
+	width: 100%;
+	margin-bottom: 40px;
+	border: none;
+	border-bottom: 1px solid #000000;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	font-size: 16px;
+	color: #000000;
+}
+input[type="login"] {
+	border: none;
+	outline: none;
+	height: 40px;
+    text-align: center;
+	background: #FFB6C1;
+	color: #000000;
+	font-size: 18px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+
+input[type="login"]:hover {
+	cursor: pointer;
+	background: #FF69B4;
+	
+	color: #FFFFFF;
+}
+
+a {
+	text-decoration: none;
+	color: #FF69B4;
+	font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+	<div class="login-box">
+		<h1>Login</h1>
+		<form>
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" placeholder="Enter Email" required>
+			<label for="password">Password</label>
+			<input type="password" id="passwords" name="password" placeholder="Enter Password" required>
+			<input type="login" id="login" name="login" value="Login">
+			<p>Don't have an account? <a href="register.html">Sign up</a></p>
+		</form>
+	</div>
+</body>
+<script src="logscript.js" type="module"></script>
+</html>
+

@@ -1,0 +1,116 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    transition-property: scroll-behavior;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+  }
+
+nav {
+    margin: 0%;
+    position: fixed;
+    font: 17px solid;
+    /* background-color: #2c2c2c; */
+    height: 12%;
+    width: 100%;
+    top: 0%;
+    /* opacity: 60%; */
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0% 3%;
+  }
+  nav li {
+    padding: 0% 3%;
+    margin-top: 1%;
+    list-style-type: none;
+  }
+  nav li a:hover {
+    text-decoration: underline;
+    text-decoration-color: #e2a300;
+  }
+  nav a {
+    color: aliceblue;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7% 0;
+  background-color: black;
+}
+
+#hometext {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  padding-inline-start: 8%;
+  
+}
+
+ .textpos {
+  display: flex;
+  flex-wrap: wrap;
+  height: 10%;
+  width: 73%;
+  justify-content: safe;
+  align-items: center;
+  text-align: justify;
+} 
+
+/* #hello {
+  font-size: 250%;
+} */
+
+
+#name {
+  font-weight: 500;
+  font-size: 480%;
+  line-height: 95%;
+}  
+
+span {
+  color: rgb(255, 149, 0);
+}
+
+#enter {
+  width: 170px;
+  height: 50px;
+   margin: 20px auto;
+  text-align: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: medium;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, green, yellow);
+  border: none;
+  transition: transform 0.2s;
+  margin-top: 20px;
+}
+
+#enter:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}

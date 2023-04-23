@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    /* Style for the navigation bar */
+    body {
+      background-color: black;
+      margin: 0px;
+      padding: 0px;
+      color: white;
+    }
+
+    nav {
+      margin: 0%;
+      position: fixed;
+      font: 17px solid;
+      height: 12%;
+      width: 100%;
+      top: 0%;
+    }
+    
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0% 3%;
+    }
+    
+    nav li {
+      padding: 0% 3%;
+      margin-top: 1%;
+      list-style-type: none;
+    }
+    
+    nav li a:hover {
+      text-decoration: underline;
+      text-decoration-color: #e2a300;
+    }
+    
+    nav a {
+      color: aliceblue;
+      text-decoration: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    /* Style for the section containing score, accuracy, and attempts */
+    body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .metrics {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  width: 80%;
+  text-align: center;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.metric h2 {
+  font-size: 24px;
+  margin-top: 100px;
+}
+
+.metric p {
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+  </style>
+  <meta charset="UTF-8" />
+  <title>An Interactive Puzzle Game</title>
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <nav class="navbar">
+    <ul class="navigationcon">
+      <li><a href="index.html" class="menu">Home </a></li>
+      <li><a href="Dashboard.html" class="menu">Dashboard</a></li>
+      <li><a href="instructionspage.html" class="menu">Rules</a></li>
+      <li><a href="#" class="menu">Support</a></li>
+      <li><a href="loginpage.html" class="menu">Login</a></li>
+    </ul>
+  </nav>
+ 
+  <div class="metrics">
+    <div class="metric">
+      <h2>Time Taken</h2>
+      <p id="time-taken"></p>
+      <p> <span id="total-time"></span> minutes</p>
+    </div>
+    <div class="metric">
+      <h2>Accuracy</h2>
+      <p id="accuracy">100%</p>
+    </div>
+    <div class="metric">
+      <h2>Soft Skill</h2>
+      <p id="soft-skill">Curiosity</p>
+    </div>
+  </div>
+<!-- <button id="back-toindex">Back to Index</button> -->
+<script>
+      // get total time from localStorage
+      const totalTimeMs = localStorage.getItem("totalTime");
+      const totalTimeMins = Math.round(totalTimeMs / 60000);
+      const totalTimeElement = document.getElementById("total-time");
+      totalTimeElement.textContent = `${totalTimeMins} `;
+    </script>
+
+</html>
