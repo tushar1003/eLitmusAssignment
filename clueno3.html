@@ -88,19 +88,29 @@ iframe {
 	</form>
 	
 	<script>
+		    let correct = 0, total = 0;
+let accuracy = 0.0;
 		// Use JavaScript to check if the user's answer is correct
 		const form = document.querySelector('form');
+		total++;
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const answer = document.querySelector('#answer').value;
         if (answer === 'unstoppable') {
-            // Redirect to the next clue
-            window.location.href = 'clueno4.html';
-        } else {
-            alert('Sorry, that answer is incorrect. Please try again.');
-        }
-    });
+			correct++;
 
+            // Redirect to the next clue
+            window.location.href = 'clueno6.html';
+        } else {
+            // alert('Sorry, that answer is incorrect. Please try again.');
+			alert("Wrong answer, go back to start.");
+        window.location.href = "clueno1.html";
+        }
+		accuracy = (correct/total)*100;
+    uploadData(accuracy,ok);
+    });
+	
 	</script>
 	
 </body>

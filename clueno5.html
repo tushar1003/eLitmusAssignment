@@ -89,9 +89,11 @@
 			const answer = document.querySelector('#answer').value;
 			if (answer === 'Elitmus') {
 				// Unlock the next step of the puzzle
-				window.location.href="congratulations.html"
+				window.location.href="clueno9.html"
 			} else {
-				alert('Sorry, that answer is incorrect. Please try again.');
+				// alert('Sorry, that answer is incorrect. Please try again.');
+				alert("Wrong answer, go back to start.");
+        window.location.href = "clueno1.html";
 			}
 		});
 	</script>

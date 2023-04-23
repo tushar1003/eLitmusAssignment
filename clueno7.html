@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puzzle Game</title>
+  <style>
+    body {
+    background: url(/assets/alvaro-reyes-4eTnTQle0Ks-unsplash.jpg) center center/cover no-repeat;
+}
+
+#nav{
+    background-color: rgba(255, 255, 255, 0.41);
+    color: black;
+}
+.container {
+    margin: 60px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box hr{
+    height: 4px;
+    background-color: black;
+}
+
+
+p {
+    font-size: 2rem;
+}
+
+ul {
+    margin-left: 100px;
+}
+
+ul li a {
+    font-size: 1.3rem;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px solid antiquewhite;
+}
+
+.wrapper{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.285);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.wrapper:hover{
+    background-color: rgba(0, 0, 0, 0.812);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+input[type="text"] {
+	font-size: 18px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+input[type="submit"] {
+	font-size: 18px;
+	padding: 10px 20px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+	background-color: #555;
+}
+
+  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+            <p>This one is a brainstormer . Think about it carefully and you will fall in love with the answer.</p>
+            <hr>
+
+            <div class="wrapper">
+                <div class="yellow">
+                    <p>What is Mary + Mary equal to?</p>
+                    <p>Hint: You can go to this page-> <a href="#" target="_blank"><span class="blue">Page</span> </a> </p>
+                </div>
+                <div>
+                    <img src="/assets/4a5001b7beea096457f480c8808572428b-09-roll-safe.2x.h473.w710.webp" alt="">
+                </div>
+            </div>
+	<!-- <h1>Welcome to the Puzzle Game!</h1>
+	
+	<p>Listen carefully to the music playing in the background. The lyrics hold the key to unlocking the next clue.</p>
+	
+	<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2J2Z1SkXYghSajLibnQHOa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+	
+	<form>
+		<label for="answer">Enter the decoded message</label>
+		<input type="text" id="answer" name="answer">
+		<input type="submit" value="Submit">
+	</form>
+	
+	<script>
+		// Use JavaScript to check if the user's answer is correct
+		const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const answer = document.querySelector('#answer').value;
+        if (answer === 'summary') {
+            // Redirect to the next clue
+            window.location.href = 'clueno8.html';
+        } else {
+            alert('Sorry, that answer is incorrect. Please try again.');
+        }
+    });
+
+	</script>
+	
+</body>
+</html>

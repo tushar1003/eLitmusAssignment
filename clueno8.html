@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puzzle Game</title>
+  <style>
+    body{
+    background: url(/assets/car.jpg) center/cover no-repeat;
+}
+.container{
+    margin: 60px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box{
+    color: white;
+    border: 2px solid rgb(221, 20, 20);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.153);
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+
+.box:hover{
+    background-color: rgba(0, 0, 0, 0.504);
+}
+
+
+p{
+    font-size: 2rem;
+}
+
+ul{
+    margin-left: 100px;
+}
+ul li a{
+    font-size: 1.3rem;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	font-size: 24px;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+input[type="text"] {
+	font-size: 18px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+input[type="submit"] {
+	font-size: 18px;
+	padding: 10px 20px;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+	background-color: #555;
+}
+
+iframe {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+            <p>Hint1: This person is very famous for driving meme</p>
+            <p>Hint2: He has lots of sisters</p>
+            <p>Links:
+                <ul>
+                    <li><a href="https://www.instagram.com/ranbir_kapoooor/?hl=en" class="yellow" target="_blank"> Person-1</a></li>
+                    <li><a href="https://www.instagram.com/selmonbhai249/" class="yellow" target="_blank"> Person-2</a></li>
+                    <li><a href="https://www.instagram.com/jrntr/?hl=en" class="yellow" target="_blank"> Person-3</a></li>
+                    <li><a href="https://www.instagram.com/alluarjunonline/?hl=en" class="yellow" target="_blank"> Person-4</a></li>
+                    <li><a href="https://www.instagram.com/duttsanjay/?hl=en" class="yellow" target="_blank"> Person-5</a></li>
+                </ul>
+            </p>
+
+            <div class="heading-secondary">
+                Open the instagram links of 
+                <span class="yellow">
+                    above celebrities
+                </span>
+
+                 and type the name of the person we are talking about.
+            </div>
+            <form>
+                <!-- <label for="answer">Enter the decoded message from the song lyrics:</label> -->
+                <input type="text" id="answer" name="answer">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+	<!-- <h1>Welcome to the Puzzle Game!</h1>
+	
+	<p>Listen carefully to the music playing in the background. The lyrics hold the key to unlocking the next clue.</p>
+	
+	<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2J2Z1SkXYghSajLibnQHOa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
+	
+	
+	
+	<script>
+		// Use JavaScript to check if the user's answer is correct
+		const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const answer = document.querySelector('#answer').value;
+        if (answer === 'Salman Khan') {
+            // Redirect to the next clue
+            window.location.href = 'clueno9.html';
+        } else {
+
+            alert('Sorry, that answer is incorrect. Please try again.');
+            alert("Wrong answer, go back to start.");
+        window.location.href = "clueno1.html";
+        }
+    });
+
+	</script>
+	
+</body>
+</html>

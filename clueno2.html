@@ -82,12 +82,16 @@ button:hover {
   </div>
 
   <script>
+    let correct = 0, total = 0;
+let accuracy = 0.0;
     function checkAnswer() {
       var answer = document.getElementById("answer").value;
       if (answer.toLowerCase() == "sharing is the best moral value") {
+        correct++;
         window.location.href = "clueno3.html";
       } else {
-        alert("Wrong answer, try again.");
+        alert("Wrong answer, go back to start.");
+        window.location.href = "clueno1.html";
       }
     }
   </script>
