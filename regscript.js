@@ -36,7 +36,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
       const user = userCredential.user;
       console.log(user);
       alert("Registration successfully!!");
-      window.location.href="loginpage.html";
+      window.location.href="instructionspage.html";
       // ...
     })
     .catch((error) => {

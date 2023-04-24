@@ -111,8 +111,8 @@ iframe {
                 <br>
                 <br>
                 <form>
-                    <label for="answer">Enter the decoded message from the song lyrics:</label>
-                    <input type="text" id="answer" name="answer">
+                    <!-- <label for="answer">Enter the decoded message from the song lyrics:</label> -->
+                    <input type="text" id="answer" name="answer" id="second-input">
                     <input type="submit" value="Submit">
                 </form>
         </div>
@@ -121,19 +121,42 @@ iframe {
 	<script>
 		// Use JavaScript to check if the user's answer is correct
 		const form = document.querySelector('form');
+        
+let btn1 = document.getElementById('first-btn');
+let input1 = document.getElementById('first-input');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const answer = document.querySelector('#answer').value;
         if (answer === 'a+c+e') {
             // Redirect to the next clue
-            window.location.href = 'congratulation.html';
+            // window.location.href = 'congratulation.html';
+            document.getElementById('clickhere').style.visibility='visible';
         } else {
             alert('Sorry, that answer is incorrect. Please try again.');
             alert("Wrong answer, go back to start.");
             window.location.href = "clueno1.html";
         }
     });
+    btn1.onclick = function(){
+    let answerString = input1.value.toString().toLowerCase().trim();
+    // total++;
+    // var ok = false;
 
+    if(answerString.length==0){
+        alert('Invalid input');
+    }
+    else if(answerString=="queue"){
+        // correct++;
+        window.location.href = 'congratulations.html';
+        // ok = true;
+    }else{
+        alert('wrong answer');
+    }
+    // accuracy = (correct/total)*100;
+    // console.log(accuracy);
+    
+    // uploadData(accuracy,ok);
+}
 	</script>
 	
 </body>

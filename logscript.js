@@ -39,7 +39,7 @@ import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/fire
       const user = userCredential.user;
       console.log(user);
       alert(user.email+" Login successfully!!!");
-      window.location.href = "index.html";
+      window.location.href = "instructionspage.html";
       
       // ...
     })
